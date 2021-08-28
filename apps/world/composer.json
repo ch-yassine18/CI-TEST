@@ -1,0 +1,21 @@
+{
+    "name": "ornikar/world",
+    "description": "World application",
+    "type": "project",
+    "require": {
+        "monolog/monolog": "2.0.1"
+    },
+    "license": "Ornikar",
+    "authors": [
+        {
+            "name": "Julien Breux",
+            "email": "julien.breux@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "scripts": {
+        "dev:start": [
+            "php -S localhost:3000 -t public/"
+        ]
+    }
+}
