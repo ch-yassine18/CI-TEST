@@ -24,12 +24,12 @@ jobs:
     - name: Build the hello Docker image
       run: |
         docker build apps/hello -t ghcr.io/app-hello:latest
-        docker push ghcr.io/app-hello:latest
+        docker push ghcr.io/chyassine/app-hello:latest
       
     - name: Build the World Docker image
       run: |
         docker build apps/world -t app-world:latest
-        docker push ghcr.io/app-world:latest
+        docker push ghcr.io/chyassine/app-world:latest
     
       
    
