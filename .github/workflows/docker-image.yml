@@ -22,10 +22,13 @@ jobs:
         
     - uses: actions/checkout@v2
     - name: Build the hello Docker image
-      run: docker build apps/hello -t app-hello:$(date +%s)
+      run: docker build apps/hello -t ghcr.io/app-hello:latest
+           docker push ghcr.io/app-hello:latest
       
     - name: Build the World Docker image
-      run: docker build apps/world -t app-world:$(date +%s)
+      run: docker build apps/world -t app-world:latest
+           docker push ghcr.io/app-world:latest
+    
       
    
 
