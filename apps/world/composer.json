@@ -15,7 +15,7 @@
     "minimum-stability": "stable",
     "scripts": {
         "dev:start": [
-            "php -S localhost:3000 -t public/"
+            "php -S 0.0.0.0:3000 -t public/"
         ]
     }
 }
