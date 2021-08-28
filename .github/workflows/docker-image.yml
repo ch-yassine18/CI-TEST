@@ -1,0 +1,20 @@
+name: Docker Image CI
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Build the hello Docker image
+      run: docker build apps/hello --file Dockerfile --tag app-hello:$(date +%s)
+    - name: Build the World Docker image
+      run: docker build apps/world --file Dockerfile --tag app-world:$(date +%s)
