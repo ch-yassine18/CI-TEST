@@ -13,6 +13,13 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+    - name: Login to GitHub Container Registry
+      uses: docker/login-action@v1
+      with:
+        registry: ghcr.io
+        username: ${{ github.actor }}
+        password: ${{ secrets.GITHUB_TOKEN }}
+        
     - uses: actions/checkout@v2
     - name: Build the hello Docker image
       run: docker build apps/hello -t app-hello:$(date +%s)
@@ -20,9 +27,5 @@ jobs:
     - name: Build the World Docker image
       run: docker build apps/world -t app-world:$(date +%s)
       
-    - name: Docker Login
-      uses: docker/login-action@v1.10.0
-      with:
-        username: ${{ secrets.DOCKER_USERNAME }}
-        password: ${{ secrets.DOCKER_PASSWORD }}
+   
 
